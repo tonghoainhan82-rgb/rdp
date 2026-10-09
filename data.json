@@ -1,0 +1,1514 @@
+{
+  "commands": [
+    {
+      "trigger": "ta chọn ngươi",
+      "matchType": "exact",
+      "enabled": true,
+      "pick": "first",
+      "replyMode": "reply",
+      "rules": [
+        {
+          "conditions": [
+            {
+              "type": "userId",
+              "op": "is",
+              "value": "946662197168341053"
+            }
+          ],
+          "replies": [
+            "**xuân thu tất thành** {xuân thu tất thành} "
+          ],
+          "deleteAfter": 0,
+          "action": {
+            "type": "none",
+            "target": "sender",
+            "seconds": 600,
+            "delay": 0
+          }
+        }
+      ],
+      "defaultReplies": [
+        "kiến cỏ phàm nhân sâu kiến sủa gì vậy!!!!"
+      ],
+      "defaultAction": {
+        "type": "none",
+        "target": "sender",
+        "reason": "hỗn",
+        "seconds": 60,
+        "delay": 0
+      }
+    },
+    {
+      "trigger": "",
+      "matchType": "contains",
+      "enabled": true,
+      "pick": "random",
+      "replyMode": "reply",
+      "deleteAfter": 0,
+      "rules": [],
+      "defaultReplies": [
+        "Xin chào {user}!"
+      ],
+      "defaultAction": {
+        "type": "none",
+        "target": "sender",
+        "seconds": 600,
+        "delay": 0
+      }
+    }
+  ],
+  "tags": [
+    {
+      "name": "xuân thu tất thành",
+      "type": "link",
+      "value": "https://media.discordapp.net/attachments/1552468487358779513/1554528970811383889/snaptik.vn_7633750466664369428.mp4?backend=b2&ex=6abd376c&is=6abbe5ec&hm=dc022bee6eb2f71e9c3f97d08b94adb75c57fc0cca589fcc24e9898e8140128a&",
+      "label": "-"
+    },
+    {
+      "name": "",
+      "type": "video",
+      "value": ""
+    }
+  ],
+  "settings": {
+    "hierarchy": {
+      "enabled": true,
+      "mute": {
+        "higher": {
+          "allow": true,
+          "reply": "",
+          "punish": {
+            "type": "none",
+            "seconds": 30
+          },
+          "deleteAfter": 10
+        },
+        "equal": {
+          "allow": false,
+          "reply": "{user} bạn cùng cấp với {target} nên không thể {action}.",
+          "punish": {
+            "type": "none",
+            "seconds": 30
+          },
+          "deleteAfter": 10
+        },
+        "lower": {
+          "allow": false,
+          "reply": "{user} bạn thấp cấp hơn {target} nên không thể {action}.",
+          "punish": {
+            "type": "none",
+            "seconds": 30
+          },
+          "deleteAfter": 10
+        }
+      },
+      "kick": {
+        "higher": {
+          "allow": true,
+          "reply": "",
+          "punish": {
+            "type": "none",
+            "seconds": 30
+          },
+          "deleteAfter": 10
+        },
+        "equal": {
+          "allow": false,
+          "reply": "{user} bạn cùng cấp với {target} nên không thể {action}.",
+          "punish": {
+            "type": "none",
+            "seconds": 30
+          },
+          "deleteAfter": 10
+        },
+        "lower": {
+          "allow": false,
+          "reply": "{user} bạn thấp cấp hơn {target} nên không thể {action}.",
+          "punish": {
+            "type": "none",
+            "seconds": 30
+          },
+          "deleteAfter": 10
+        }
+      },
+      "ban": {
+        "higher": {
+          "allow": true,
+          "reply": "",
+          "punish": {
+            "type": "none",
+            "seconds": 30
+          },
+          "deleteAfter": 10
+        },
+        "equal": {
+          "allow": false,
+          "reply": "{user} bạn cùng cấp với {target} nên không thể {action}.",
+          "punish": {
+            "type": "none",
+            "seconds": 30
+          },
+          "deleteAfter": 10
+        },
+        "lower": {
+          "allow": false,
+          "reply": "{user} bạn thấp cấp hơn {target} nên không thể {action}.",
+          "punish": {
+            "type": "none",
+            "seconds": 30
+          },
+          "deleteAfter": 10
+        }
+      },
+      "requirePerm": {
+        "enabled": true,
+        "reply": "{user} bạn không có quyền {action} (cần quyền: {perm}).",
+        "deleteAfter": 10
+      },
+      "botCannot": {
+        "reply": "Bot không thể {action} {target} (role của bot thấp hơn/bằng, người đó là Admin/chủ server, hoặc bot thiếu quyền).",
+        "deleteAfter": 10
+      }
+    }
+  },
+  "scriptData": {
+    "shared": {},
+    "byScript": {
+      "clone_emoji": {},
+      "ai_ollama": {
+        "hist": {
+          "20": [
+            {
+              "role": "user",
+              "content": "U: mày là ai"
+            },
+            {
+              "role": "assistant",
+              "content": "Câm mồm"
+            }
+          ]
+        },
+        "enabled": true
+      }
+    }
+  },
+  "roles": {},
+  "channels": {},
+  "members": {},
+  "timers": [],
+  "scripts": [
+    {
+      "id": "nap_tu_dien",
+      "name": "Nạp từ điển Viet*.txt (gửi link git)",
+      "enabled": true,
+      "language": "javascript",
+      "trigger": "https?://(www\\.)?(github\\.com|raw\\.githubusercontent\\.com)/\\S+",
+      "matchType": "regex",
+      "replyMode": "reply",
+      "cooldown": 5,
+      "deleteAfter": 0,
+      "channels": "",
+      "fromIds": "",
+      "timeoutMs": 15000,
+      "code": "// SCRIPT 1 - NẠP TỪ ĐIỂN: gửi link GitHub chứa các file Viet*.txt (Viet11K.txt, Viet22K.txt...) cho bot.\n// Bot tải về, gộp, nén và lưu vào data.json (shared.vtv_dict). Script 2 dùng dữ liệu này để đoán từ.\n// Link hỗ trợ: github.com/user/repo | .../tree/nhánh/thư-mục | .../blob/nhánh/file.txt | raw.githubusercontent.com/...\nconst zlib = require('zlib');\nconst ALLOWED_IDS = [];   // ID được phép nạp. Để trống = chỉ Admin / chủ server.\nif (!(ctx.user.isAdmin || ctx.user.isOwner || ALLOWED_IDS.includes(ctx.user.id))) return;\n\nconst NAME_RE = /(^|\\/)viet[^\\/]*\\.txt$/i;\nconst KNOWN = ['Viet11K.txt', 'Viet22K.txt', 'Viet39K.txt', 'Viet74K.txt'];\nconst UA = { 'User-Agent': 'discord-bot-nap-tu-dien' };\nconst enc = p => p.split('/').map(encodeURIComponent).join('/');\nconst rawUrl = (o, r, ref, p) => 'https://raw.githubusercontent.com/' + o + '/' + r + '/' + encodeURIComponent(ref) + '/' + enc(p);\nasync function getJson(u) {\n  const r = await fetch(u, { headers: { ...UA, Accept: 'application/vnd.github+json' } });\n  if (!r.ok) throw new Error('GitHub trả về ' + r.status + ' cho ' + u);\n  return r.json();\n}\nasync function exists(u) { try { return (await fetch(u, { method: 'HEAD', headers: UA })).ok; } catch { return false; } }\nasync function getText(u) {\n  const r = await fetch(u, { headers: UA });\n  if (!r.ok) throw new Error('Tải lỗi ' + r.status + ': ' + u);\n  const t = await r.text();\n  if (t.length > 6000000) throw new Error('File quá lớn: ' + u);\n  return t.replace(/^\\ufeff/, '');\n}\n\ntry {\n  const urls = (ctx.content.match(/https?:\\/\\/[^\\s<>)\\]]+/g) || []).map(u => u.replace(/[.,;]+$/, ''));\n  const files = [];\n  for (const url of urls) {\n    let U; try { U = new URL(url); } catch { continue; }\n    const host = U.hostname.toLowerCase().replace(/^www\\./, '');\n    const parts = U.pathname.split('/').filter(Boolean).map(decodeURIComponent);\n    if (host === 'raw.githubusercontent.com') {\n      if (/\\.txt$/i.test(U.pathname)) files.push({ name: parts[parts.length - 1], url });\n    } else if (host === 'github.com') {\n      const [o, r0, kind, ref, ...rest] = parts;\n      if (!o || !r0) continue;\n      const repo = r0.replace(/\\.git$/i, '');\n      if ((kind === 'blob' || kind === 'raw') && ref && rest.length) {\n        files.push({ name: rest[rest.length - 1], url: rawUrl(o, repo, ref, rest.join('/')) });\n        continue;\n      }\n      const prefix = kind === 'tree' ? rest.join('/') : '';\n      try {\n        const branch = kind === 'tree' && ref ? ref : (await getJson('https://api.github.com/repos/' + o + '/' + repo)).default_branch;\n        const tree = await getJson('https://api.github.com/repos/' + o + '/' + repo + '/git/trees/' + encodeURIComponent(branch) + '?recursive=1');\n        for (const t of tree.tree || []) {\n          if (t.type === 'blob' && NAME_RE.test(t.path) && (!prefix || t.path.startsWith(prefix + '/')))\n            files.push({ name: t.path.split('/').pop(), url: rawUrl(o, repo, branch, t.path) });\n        }\n      } catch (e) {\n        // API GitHub bị giới hạn lượt gọi / lỗi -> thử tải thẳng các tên file quen thuộc ở nhánh main, master\n        print('GitHub API lỗi (' + e.message + ') -> thử tải thẳng ' + KNOWN.join(', '));\n        for (const br of [kind === 'tree' && ref ? ref : null, 'main', 'master'].filter(Boolean)) {\n          const hits = [];\n          for (const nm of KNOWN) {\n            const u = rawUrl(o, repo, br, (prefix ? prefix + '/' : '') + nm);\n            if (await exists(u)) hits.push({ name: nm, url: u });\n          }\n          if (hits.length) { files.push(...hits); break; }\n        }\n      }\n    }\n  }\n  const uniq = [...new Map(files.map(f => [f.url, f])).values()].slice(0, 8);\n  if (!uniq.length) { reply('❌ Không thấy file Viet*.txt nào trong link này.'); return; }\n\n  // Cách đọc từ giống doan_tu.py: NFC, thường, bỏ dòng trống / có số, gộp dấu cách + gạch nối\n  const parse = text => {\n    const set = new Set();\n    for (const line of text.split(/\\r?\\n/)) {\n      const w = line.normalize('NFC').trim().toLowerCase();\n      if (!w || /\\d/.test(w)) continue;\n      set.add(w.replace(/[\\s\\-]+/g, ' '));\n    }\n    return [...set];\n  };\n  const loaded = await Promise.all(uniq.map(async f => ({ name: f.name, words: parse(await getText(f.url)) })));\n  loaded.sort((a, b) => a.words.length - b.words.length);   // file nhỏ = từ thông dụng hơn -> ưu tiên khi đoán\n\n  const seen = new Set(), all = [], bounds = [], info = [];\n  for (const f of loaded) {\n    let added = 0;\n    for (const w of f.words) if (!seen.has(w)) { seen.add(w); all.push(w); added++; }\n    bounds.push(all.length);\n    info.push({ name: f.name, words: f.words.length, added });\n  }\n  const C = zlib.constants;\n  const br = zlib.brotliCompressSync(Buffer.from(all.join('\\n'), 'utf8'), { params: { [C.BROTLI_PARAM_QUALITY]: 11 } }).toString('base64');\n  if (br.length > 450000) { reply('❌ Dữ liệu sau nén quá lớn (' + Math.round(br.length / 1024) + ' KB), vượt giới hạn output của bot (512 KB).'); return; }\n\n  shared.vtv_dict = { v: 1, src: urls.join(' '), at: ctx.now, total: all.length, bounds, files: info, br };\n  print('Đã nạp ' + all.length + ' từ, nén ' + Math.round(br.length / 1024) + ' KB');\n  reply('✅ Đã nạp **' + all.length.toLocaleString('en-US') + '** từ vào data.json (~' + Math.round(br.length / 1024) + ' KB nén).\\n' +\n    info.map(f => '• ' + f.name + ': ' + f.words + ' từ (mới ' + f.added + ')').join('\\n'));\n} catch (e) {\n  reply('❌ Nạp từ điển lỗi: ' + (e && e.message ? e.message : e));\n}"
+    },
+    {
+      "id": "vua_tv",
+      "name": "Vua Tiếng Việt - tự đoán từ",
+      "enabled": true,
+      "language": "javascript",
+      "trigger": "Từ\\s*cần\\s*đoán",
+      "matchType": "regex",
+      "replyMode": "send",
+      "cooldown": 0,
+      "deleteAfter": 0,
+      "channels": "",
+      "fromIds": "1248205177589334026",
+      "timeoutMs": 8000,
+      "code": "// SCRIPT 2 - VUA TIẾNG VIỆT (tự đoán): đọc tin của bot game, giải từ xáo chữ theo logic doan_tu.py rồi gửi đáp án vào kênh.\n// Chỉ nhận tin từ ID đã khai ở ô \"Chỉ nhận tin từ ID\" (cho phép cả bot). Cần nạp từ điển bằng Script 1 trước.\n// Mẫu tin: \"Từ cần đoán: c/ò/n/l/n/h/h/ạ/g (gồm 9 ký tự).\"\nconst zlib = require('zlib');\nconst MAX_SEND = 1;   // số đáp án gửi (xếp theo độ thông dụng). Nếu có nhiều từ cùng khớp, tăng lên 2-3 để thử thêm.\n\nconst lines = String(ctx.content || '').normalize('NFC').split('\\n');\nconst li = lines.findIndex(l => /từ\\s*cần\\s*đoán/i.test(l));\nif (li < 0) return;\nconst isL = c => /\\p{L}/u.test(c);\nconst take = l => l.replace(/^.*?từ\\s*cần\\s*đoán\\s*[*_\\x60~]*\\s*[:：]?/i, '').split(/\\(\\s*gồm/i)[0];\nlet chars = [...take(lines[li]).toLowerCase()].filter(isL);\nif (!chars.length && lines[li + 1]) chars = [...lines[li + 1].split(/\\(\\s*gồm/i)[0].toLowerCase()].filter(isL);\nconst declared = +((lines[li].match(/gồm\\s*(\\d+)/i) || [])[1] || 0);\nif (!chars.length) { print('Không đọc được ký tự từ tin nhắn.'); return; }\nif (declared && declared !== chars.length) print('Cảnh báo: đề ghi ' + declared + ' ký tự nhưng đọc được ' + chars.length);\n\nconst D = shared.vtv_dict;\nif (!D || !D.br) { print('Chưa có từ điển. Admin hãy gửi link git chứa Viet*.txt cho bot (Script 1).'); return; }\nconst words = zlib.brotliDecompressSync(Buffer.from(D.br, 'base64')).toString('utf8').split('\\n');\nconst tierOf = i => { let t = 0; while (t < D.bounds.length - 1 && i >= D.bounds[t]) t++; return t; };\n\nconst lettersOf = w => [...w].filter(isL);\nconst strip = s => s.replace(/đ/g, 'd').replace(/Đ/g, 'D').normalize('NFD').replace(/\\p{Mn}/gu, '').normalize('NFC');\nconst n = chars.length;\nconst key = chars.slice().sort().join('');\nconst lkey = [...strip(chars.join(''))].sort().join('');\n\n// 1) khớp đúng dấu  2) khớp bỏ dấu  3) gợi ý thiếu 1 ký tự (chỉ ghi log, không gửi)\nconst exact = [], loose = [], near = [];\nconst have = {}; for (const c of chars) have[c] = (have[c] || 0) + 1;\nwords.forEach((w, i) => {\n  const ls = lettersOf(w);\n  if (ls.length === n) {\n    if (ls.slice().sort().join('') === key) exact.push([tierOf(i), w]);\n    else if ([...strip(ls.join(''))].sort().join('') === lkey) loose.push([tierOf(i), w]);\n  } else if (ls.length === n - 1) {\n    const cnt = {}; for (const c of ls) cnt[c] = (cnt[c] || 0) + 1;\n    if (Object.keys(cnt).every(c => (have[c] || 0) >= cnt[c])) near.push([tierOf(i), w]);\n  }\n});\nconst rank = a => a.sort((x, y) => x[0] - y[0] || (x[1] < y[1] ? -1 : x[1] > y[1] ? 1 : 0)).map(x => x[1]);\n\nlet mode = 'khớp đúng dấu', res = rank(exact);\nif (!res.length) { mode = 'khớp khi bỏ dấu'; res = rank(loose); }\nif (!res.length) {\n  print('Ký tự (' + n + '): ' + chars.join('/') + ' -> không có từ khớp đủ. Gợi ý thiếu 1 ký tự: ' + rank(near).slice(0, 10).join(' | '));\n  return;\n}\nprint('Ký tự (' + n + '): ' + chars.join('/') + ' -> ' + mode + ' ' + res.length + ' từ: ' + res.slice(0, 10).join(' | '));\nres.slice(0, MAX_SEND).forEach(w => reply(w));"
+    },
+    {
+      "id": "taixiu",
+      "name": "Tài xỉu (xu dùng chung)",
+      "enabled": true,
+      "language": "javascript",
+      "trigger": "!tx",
+      "matchType": "startsWith",
+      "replyMode": "reply",
+      "cooldown": 3,
+      "deleteAfter": 0,
+      "channels": "",
+      "fromIds": "",
+      "timeoutMs": 5000,
+      "code": "// !tx tai 100  |  !tx xiu 100  |  !tx (xem số xu)\nconst bal = shared.coins = shared.coins || {};\nconst uid = ctx.user.id;\nif (bal[uid] === undefined) bal[uid] = 1000;\nconst side = (ctx.args[0] || '').toLowerCase();\nconst bet = parseInt(ctx.args[1], 10);\nif (!['tai', 'xiu', 'tài', 'xỉu'].includes(side) || !(bet > 0)) {\n  reply(ctx.user.mention + ' bạn có **' + bal[uid] + '** xu.\\nCách chơi: !tx tai 100 hoặc !tx xiu 100');\n  return;\n}\nif (bet > bal[uid]) { reply(ctx.user.mention + ' không đủ xu (còn ' + bal[uid] + ').'); return; }\nconst d = [1, 2, 3].map(() => 1 + Math.floor(Math.random() * 6));\nconst sum = d[0] + d[1] + d[2];\nconst triple = d[0] === d[1] && d[1] === d[2];\nconst result = sum >= 11 ? 'tài' : 'xỉu';\nconst pick = side.startsWith('t') ? 'tài' : 'xỉu';\nconst win = !triple && pick === result;\nbal[uid] += win ? bet : -bet;\nreply('🎲 ' + d.join(' + ') + ' = **' + sum + '** → **' + (triple ? 'bão (nhà cái ăn)' : result) + '**\\n' +\n  ctx.user.mention + (win ? ' thắng +' : ' thua -') + bet + ' xu. Số dư: **' + bal[uid] + '**');"
+    },
+    {
+      "id": "noitu",
+      "name": "Nối từ (tiếng Việt, 2 tiếng)",
+      "enabled": true,
+      "language": "javascript",
+      "trigger": "!nt",
+      "matchType": "startsWith",
+      "replyMode": "reply",
+      "cooldown": 2,
+      "deleteAfter": 0,
+      "channels": "",
+      "fromIds": "",
+      "timeoutMs": 5000,
+      "code": "// !nt con mèo  ->  người sau gõ !nt mèo ăn ...\nconst word = ctx.rest.trim().toLowerCase().replace(/\\s+/g, ' ');\nconst syl = w => w.split(' ');\nstore.used = store.used || [];\nif (!word) {\n  reply(store.last ? 'Từ hiện tại: **' + store.last + '** → hãy nối bằng từ bắt đầu bằng **' + syl(store.last).at(-1) + '**' : 'Gõ !nt <từ gồm 2 tiếng> để bắt đầu.');\n  return;\n}\nif (syl(word).length !== 2) { reply('Từ phải gồm đúng 2 tiếng, vd: con mèo'); return; }\nif (store.used.includes(word)) { reply('Từ **' + word + '** đã dùng rồi!'); return; }\nif (store.last && syl(word)[0] !== syl(store.last).at(-1)) {\n  reply('Sai rồi! Từ phải bắt đầu bằng **' + syl(store.last).at(-1) + '**'); return;\n}\nstore.last = word; store.used.push(word);\nif (store.used.length > 500) store.used.shift();\nreply('✅ **' + word + '** → tiếp theo: từ bắt đầu bằng **' + syl(word)[1] + '**');"
+    },
+    {
+      "id": "clone_emoji",
+      "name": "Clone emoji / sticker vào server",
+      "enabled": true,
+      "language": "javascript",
+      "trigger": "<a?:\\w{2,32}:\\d{15,25}>|^\\s*$",
+      "matchType": "regex",
+      "replyMode": "reply",
+      "cooldown": 2,
+      "deleteAfter": 0,
+      "channels": "",
+      "fromIds": "",
+      "timeoutMs": 15000,
+      "code": "// SCRIPT - CLONE EMOJI / STICKER: ai gửi emoji (của server khác) hoặc sticker -> bot kiểm tra server mình có chưa, chưa có thì tải về rồi thêm vào server.\n// Lệnh kích hoạt (regex): <a?:\\w{2,32}:\\d{15,25}>|^\\s*$      (^\\s*$ = tin chỉ có sticker/ảnh, không có chữ)\n// Bot cần quyền \"Manage Guild Expressions\" (Quản lý emoji & sticker). Script gọi thẳng Discord API nên CẦN token (xem 2 dòng TOKEN / ENV_FILE bên dưới).\nconst fs = require('fs');\nconst API = 'http://127.0.0.1:8099/api/v10';\nconst CDN = 'http://127.0.0.1:8099/cdn';\nconst MEDIA = 'http://127.0.0.1:8099/media';\nconst TOKEN = '';      // CÁCH 1: dán token bot vào đây. KHÔNG nên: data.json bị đồng bộ lên git -> lộ token.\nconst ENV_FILE = '/tmp/fake.env';   // CÁCH 2 (nên dùng): đường dẫn file .env của bot, vd '/home/user/botcuadat-main/.env' hoặc 'C:/bot/.env'. Script đọc DISCORD_TOKEN trong đó.\nconst MAX_EMOJI = 5;        // tối đa số emoji clone từ 1 tin nhắn\nconst CLONE_STICKER = true; // true = clone cả sticker\nconst SAY_EXISTS = false;   // true = báo cả khi server đã có sẵn\n\nif (!ctx.guildId) return;\nconst text = String(ctx.content || '');\nconst emojis = [], seen = new Set();\nfor (const m of text.matchAll(/<(a?):(\\w{2,32}):(\\d{15,25})>/g)) {\n  if (seen.has(m[3])) continue; seen.add(m[3]);\n  emojis.push({ animated: !!m[1], name: m[2], id: m[3] });\n}\nconst blank = !text.trim();                       // tin không chữ: có thể là sticker\nif (!emojis.length && !(blank && CLONE_STICKER)) return;\n\nlet token = TOKEN;\nif (!token && ENV_FILE) {\n  try { const m = fs.readFileSync(ENV_FILE, 'utf8').match(/^\\s*DISCORD_TOKEN\\s*=\\s*(.+?)\\s*$/m); if (m) token = m[1].replace(/^[\"']|[\"']$/g, ''); }\n  catch (e) { print('Không đọc được ENV_FILE: ' + e.message); }\n}\nif (!token) {\n  print('Chưa có token: điền TOKEN hoặc ENV_FILE ở đầu script.');\n  if (emojis.length) reply('❌ Script clone chưa có token bot (điền TOKEN hoặc ENV_FILE ở đầu script).');\n  return;\n}\n\nconst UA = { 'User-Agent': 'DiscordBot (botcuadat, 1.0)' };\nconst sleep = ms => new Promise(r => setTimeout(r, ms));\nasync function dc(method, path, body, form) {\n  for (let t = 0; t < 2; t++) {\n    const opt = { method, headers: { ...UA, Authorization: 'Bot ' + token } };\n    if (body) { opt.headers['Content-Type'] = 'application/json'; opt.body = JSON.stringify(body); }\n    if (form) opt.body = form;\n    const r = await fetch(API + path, opt);\n    const raw = await r.text(); let j; try { j = JSON.parse(raw); } catch { j = raw; }\n    if (r.status === 429 && t === 0) { await sleep(Math.min(((j && j.retry_after) || 1) * 1000, 4000)); continue; }\n    if (!r.ok) throw new Error((j && j.message ? j.message : 'HTTP ' + r.status) + (r.status === 403 ? ' (bot thiếu quyền Manage Guild Expressions?)' : ''));\n    return j;\n  }\n}\nasync function img(url) {\n  const r = await fetch(url, { headers: UA });\n  if (!r.ok) throw new Error('Tải ảnh lỗi ' + r.status);\n  return Buffer.from(await r.arrayBuffer());\n}\n\nconst added = [], exists = [], errors = [];\ntry {\n  // ---------- EMOJI ----------\n  if (emojis.length) {\n    const have = await dc('GET', '/guilds/' + ctx.guildId + '/emojis');\n    const haveId = new Set(have.map(e => e.id)), haveName = new Set(have.map(e => e.name.toLowerCase()));\n    for (const e of emojis.slice(0, MAX_EMOJI)) {\n      if (haveId.has(e.id) || haveName.has(e.name.toLowerCase())) { exists.push(e.name); continue; }\n      try {\n        const url = CDN + '/emojis/' + e.id + (e.animated ? '.gif' : '.png') + '?size=128';\n        let buf = await img(url);\n        if (buf.length > 256 * 1024) buf = await img(url.replace('size=128', 'size=64'));\n        if (buf.length > 256 * 1024) throw new Error('ảnh emoji quá 256KB');\n        const c = await dc('POST', '/guilds/' + ctx.guildId + '/emojis', { name: e.name, image: 'data:' + (e.animated ? 'image/gif' : 'image/png') + ';base64,' + buf.toString('base64') });\n        haveName.add(e.name.toLowerCase());\n        added.push('<' + (c.animated ? 'a' : '') + ':' + c.name + ':' + c.id + '>');\n      } catch (err) { errors.push('emoji `' + e.name + '`: ' + err.message); }\n    }\n    if (emojis.length > MAX_EMOJI) errors.push('chỉ clone ' + MAX_EMOJI + ' emoji đầu tiên');\n  }\n\n  // ---------- STICKER ----------\n  if (CLONE_STICKER && blank) {\n    const m = await dc('GET', '/channels/' + ctx.channelId + '/messages/' + ctx.messageId);\n    const st = (m.sticker_items || [])[0];\n    if (st) {\n      const list = await dc('GET', '/guilds/' + ctx.guildId + '/stickers');\n      if (list.some(s => s.id === st.id || s.name.toLowerCase() === st.name.toLowerCase())) exists.push(st.name);\n      else if (st.format_type === 3) errors.push('sticker `' + st.name + '` dạng Lottie, bot không upload được');\n      else {\n        try {\n          const info = await dc('GET', '/stickers/' + st.id).catch(() => ({}));\n          const gif = st.format_type === 4;\n          const buf = await img(gif ? MEDIA + '/stickers/' + st.id + '.gif' : CDN + '/stickers/' + st.id + '.png?size=320');\n          if (buf.length > 512 * 1024) throw new Error('ảnh sticker quá 512KB');\n          const fd = new FormData();\n          fd.append('name', (st.name.length < 2 ? st.name + '__' : st.name).slice(0, 30));\n          fd.append('tags', String(info.tags || st.name).slice(0, 200).padEnd(2, '_'));\n          fd.append('description', String(info.description || '').slice(0, 100));\n          fd.append('file', new Blob([buf], { type: gif ? 'image/gif' : 'image/png' }), 'sticker.' + (gif ? 'gif' : 'png'));\n          const c = await dc('POST', '/guilds/' + ctx.guildId + '/stickers', null, fd);\n          added.push('sticker **' + c.name + '**');\n        } catch (err) { errors.push('sticker `' + st.name + '`: ' + err.message); }\n      }\n    }\n  }\n} catch (e) { errors.push(e.message); }\n\nconst out = [];\nif (added.length) out.push('✅ Đã thêm vào server: ' + added.join(' '));\nif (SAY_EXISTS && exists.length) out.push('ℹ️ Server đã có: ' + exists.join(', '));\nif (errors.length) out.push('❌ ' + errors.join(' | '));\nprint('thêm ' + added.length + ', đã có ' + exists.length + ', lỗi ' + errors.length);\nif (out.length) reply(out.join('\\n'));\n"
+    },
+    {
+      "id": "ai_ollama",
+      "name": "AI Ollama (tag, bật tắt bằng !ai)",
+      "enabled": true,
+      "language": "javascript",
+      "trigger": "<@!?999000000000000001>|^!ai\\b",
+      "matchType": "regex",
+      "replyMode": "reply",
+      "cooldown": 3,
+      "deleteAfter": 0,
+      "channels": "",
+      "fromIds": "",
+      "timeoutMs": 15000,
+      "code": "// SCRIPT - AI OLLAMA (chạy local): bị TAG hoặc bị REPLY thì trả lời cực ngắn 1-2 từ, cục súc, chửi bậy. Có bật/tắt.\n// BƯỚC 1: điền ID bot vào BOT_ID bên dưới VÀ thay chữ ID_BOT trong ô \"Lệnh kích hoạt\" bằng đúng ID đó. Ô kích hoạt (Regex): <@!?ID_BOT>|^!ai\\b\n//   -> chế độ này nhận TAG. Muốn nhận cả REPLY (bấm trả lời tin của bot, để bật ping): đổi ô kích hoạt thành [\\s\\S]+ (Regex).\n//      Lưu ý: [\\s\\S]+ làm script này nhận MỌI tin nên các script/lệnh khác phía sau sẽ không chạy nữa -> để script này ở CUỐI danh sách.\n// BƯỚC 2: máy chạy bot cài Ollama và chạy: ollama pull qwen2.5:7b\n// Lệnh: !ai on | !ai off | !ai model <tên> | !ai clear | !ai (xem trạng thái). Bật/tắt/đổi model chỉ Admin / chủ server.\nconst BOT_ID = '999000000000000001';\nconst OLLAMA_URL = 'http://127.0.0.1:11434/api/chat';\nconst DEFAULT_MODEL = 'qwen2.5:7b';\nconst MAX_WORDS = 2;        // số từ tối đa của câu trả lời\nconst MEMORY_TURNS = 6;     // nhớ bao nhiêu lượt chat gần nhất của mỗi kênh\nconst HTTP_TIMEOUT = 13000; // ms, phải nhỏ hơn \"Giới hạn chạy (ms)\" của script (15000)\nconst SYSTEM_PROMPT = [\n  'Mày là một thằng bạn cục súc, mất dạy, nói chuyện kiểu chợ búa trên mạng.',\n  'LUÔN trả lời bằng tiếng Việt, đúng 1 đến 2 TỪ, tuyệt đối không giải thích, không dài dòng, không xin lỗi, không chào hỏi.',\n  'Giọng điệu thô tục, chửi thề, gắt gỏng, xéo xắt, ví dụ: \"đm\", \"câm mồm\", \"ngu vl\", \"cút\", \"khùng à\", \"cc\", \"biến\", \"vãi lồn\".',\n  'Chỉ chửi kiểu cợt nhả, trêu chọc giữa bạn bè. KHÔNG xúc phạm chủng tộc, tôn giáo, giới tính, khuyết tật hay dòng tộc; KHÔNG đe dọa bạo lực thật.',\n  'Nếu câu hỏi đòi thông tin thật, vẫn trả lời cộc lốc 1-2 từ.',\n  'Chỉ in ra câu trả lời, không giải thích, không ngoặc kép, không emoji.'\n].join('\\n');\n\nconst isStaff = ctx.user.isAdmin || ctx.user.isOwner;\nconst text = String(ctx.content || '').trim();\nconst model = store.model || DEFAULT_MODEL;\n\n// ---- Lệnh điều khiển ----\nconst cmd = text.match(/^!ai(?:\\s+(\\S+))?(?:\\s+(.+))?$/i);\nif (cmd) {\n  const sub = (cmd[1] || '').toLowerCase(), arg = (cmd[2] || '').trim();\n  if (['on', 'bat', 'bật', 'off', 'tat', 'tắt', 'model', 'clear'].includes(sub) && !isStaff) return 'Chỉ Admin / chủ server mới dùng được.';\n  if (['on', 'bat', 'bật'].includes(sub)) { store.enabled = true; return '✅ AI đã **BẬT**. Tag hoặc reply bot để nói chuyện.'; }\n  if (['off', 'tat', 'tắt'].includes(sub)) { store.enabled = false; return '⛔ AI đã **TẮT**.'; }\n  if (sub === 'model') { if (!arg) return 'Model hiện tại: `' + model + '`'; store.model = arg; return 'Đã đổi model sang `' + arg + '`'; }\n  if (sub === 'clear') { store.hist = {}; return '🧹 Đã xóa trí nhớ.'; }\n  return 'AI đang **' + (store.enabled === false ? 'TẮT' : 'BẬT') + '** | model: `' + model + '`';\n}\n\n// ---- Chỉ trả lời khi bị tag / reply (reply có ping thì ctx.mentions chứa bot) ----\nif (!/^\\d{15,25}$/.test(BOT_ID)) { print('Chưa điền BOT_ID ở đầu script.'); return; }\nconst tagged = text.includes('<@' + BOT_ID + '>') || text.includes('<@!' + BOT_ID + '>') || (ctx.mentions || []).some(m => m.id === BOT_ID);\nif (!tagged) return;\nif (store.enabled === false) return;\n\n// ---- Chuẩn bị nội dung ----\nlet q = text.replace(/<@!?\\d{15,25}>/g, ' ').replace(/\\s+/g, ' ').trim();\nif (!q) q = '(chỉ gọi tên, không nói gì)';\nconst userLine = ctx.user.display + ': ' + q.slice(0, 400);\nstore.hist = store.hist || {};\nconst hist = store.hist[ctx.channelId] = store.hist[ctx.channelId] || [];\nconst messages = [{ role: 'system', content: SYSTEM_PROMPT }, ...hist, { role: 'user', content: userLine }];\n\n// ---- Gọi Ollama ----\nconst ac = new AbortController();\nconst timer = setTimeout(() => ac.abort(), HTTP_TIMEOUT);\nlet out = '';\ntry {\n  const res = await fetch(OLLAMA_URL, {\n    method: 'POST', headers: { 'Content-Type': 'application/json' }, signal: ac.signal,\n    body: JSON.stringify({ model, messages, stream: false, think: false, keep_alive: '30m', options: { temperature: 0.9, top_p: 0.9, num_predict: 24 } })\n  });\n  if (!res.ok) throw new Error('Ollama trả về HTTP ' + res.status + ' - ' + (await res.text()).slice(0, 200));\n  out = String(((await res.json()).message || {}).content || '');\n} catch (e) {\n  throw new Error(e.name === 'AbortError'\n    ? 'Ollama quá chậm (>' + HTTP_TIMEOUT + 'ms): model đang nạp? thử lại hoặc dùng model nhỏ hơn'\n    : 'Không gọi được Ollama (' + OLLAMA_URL + '): ' + e.message + ' - đã chạy ollama và \"ollama pull ' + model + '\" chưa?');\n} finally { clearTimeout(timer); }\n\n// ---- Làm sạch + ép ngắn ----\nout = out.replace(/<think>[\\s\\S]*?<\\/think>/gi, '').split('\\n').map(s => s.trim()).filter(Boolean)[0] || '';\nout = out.replace(/^[\"'“”‘’`*_\\-–\\s]+|[\"'“”‘’`*_\\s]+$/g, '').replace(/^(mày|bot|ai)\\s*[:：]\\s*/i, '');\nout = out.split(/\\s+/).filter(Boolean).slice(0, MAX_WORDS).join(' ').replace(/[.,;:!?…]+$/, '');\nif (!out) out = 'cút';\n\n// ---- Lưu trí nhớ ----\nhist.push({ role: 'user', content: userLine }, { role: 'assistant', content: out });\nwhile (hist.length > MEMORY_TURNS * 2) hist.shift();\nreturn out;\n"
+    }
+  ],
+  "tutien": {
+    "v": 1,
+    "players": {},
+    "scriptStore": {},
+    "settings": {
+      "slots": 4,
+      "maxRounds": 12,
+      "mpRegen": 0.12,
+      "trainRandom": 0.25,
+      "failLoss": 0.5,
+      "dummyScale": 1,
+      "duelRewardX": 3,
+      "autoCreate": true,
+      "glareGap": 1,
+      "glareExpLoss": 0.25
+    },
+    "realms": [
+      {
+        "id": "pham_nhan",
+        "name": "Phàm Nhân",
+        "emoji": "🧍",
+        "cap": 0,
+        "color": "#9ca3af",
+        "layer": 0,
+        "b0": 1,
+        "bStep": 0,
+        "growth": 1,
+        "tierNames": [
+          "Phàm thể"
+        ],
+        "expB0": 1.3,
+        "expStep": 0,
+        "trains": 8,
+        "chance": 0.9,
+        "desc": "Sinh linh thường. Không thể dẫn dắt hậu thiên khí.",
+        "locked": false,
+        "roleId": ""
+      },
+      {
+        "id": "vo_gia",
+        "name": "Võ Giả",
+        "emoji": "🥋",
+        "cap": 0,
+        "color": "#a3a3a3",
+        "layer": 0,
+        "b0": 3,
+        "bStep": 0.2,
+        "growth": 1.15,
+        "tierNames": [
+          "Tầng 1",
+          "Tầng 2",
+          "Tầng 3",
+          "Tầng 4",
+          "Tầng 5",
+          "Tầng 6",
+          "Tầng 7",
+          "Tầng 8",
+          "Tầng 9"
+        ],
+        "expB0": 2.5,
+        "expStep": 0.4,
+        "trains": 10,
+        "chance": 0.75,
+        "desc": "Mạnh gấp trăm lần phàm nhân vẫn chỉ là cấp 0, không điều khiển được hậu thiên khí.",
+        "locked": false,
+        "roleId": ""
+      },
+      {
+        "id": "luyen_tinh_hoa_khi",
+        "name": "Luyện Tinh Hóa Khí",
+        "emoji": "🌬️",
+        "cap": 1,
+        "color": "#60a5fa",
+        "layer": 0,
+        "b0": 9,
+        "bStep": 0.8,
+        "growth": 1.3,
+        "tierNames": [
+          "Tầng 1",
+          "Tầng 2",
+          "Tầng 3",
+          "Tầng 4",
+          "Tầng 5",
+          "Tầng 6",
+          "Tầng 7",
+          "Tầng 8",
+          "Tầng 9"
+        ],
+        "expB0": 6,
+        "expStep": 1.2,
+        "trains": 12,
+        "chance": 0.6,
+        "desc": "Dẫn hậu thiên chi khí vào thân, mài giũa hòa với tinh. Mạnh nhất có thể diệt quốc.",
+        "locked": false,
+        "roleId": ""
+      },
+      {
+        "id": "luyen_khi_hoa_than",
+        "name": "Luyện Khí Hóa Thần",
+        "emoji": "✨",
+        "cap": 1,
+        "color": "#a78bfa",
+        "layer": 0,
+        "b0": 1000000,
+        "bStep": 200000,
+        "growth": 1.8,
+        "tierNames": [
+          "Tầng 1",
+          "Tầng 2",
+          "Tầng 3",
+          "Tầng 4",
+          "Tầng 5",
+          "Tầng 6",
+          "Tầng 7",
+          "Tầng 8",
+          "Tầng 9"
+        ],
+        "expB0": 1200000,
+        "expStep": 300000,
+        "trains": 14,
+        "chance": 0.45,
+        "desc": "Gộp tam hoa ngũ khí thành một, sinh ra Thần. Hủy nhục thân dễ dàng tái tạo. Diệt thế giả — chỉ số đã tiến sát vô hạn.",
+        "locked": false,
+        "roleId": ""
+      },
+      {
+        "id": "luyen_than_hoan_hu",
+        "name": "Luyện Thần Hoàn Hư",
+        "emoji": "🌌",
+        "cap": 1,
+        "color": "#818cf8",
+        "layer": 1,
+        "b0": 0,
+        "bStep": 40,
+        "growth": 1.5,
+        "tierNames": [
+          "Sơ kỳ",
+          "Trung kỳ",
+          "Hậu kỳ",
+          "Đại viên mãn"
+        ],
+        "expB0": 0,
+        "expStep": 25,
+        "trains": 16,
+        "chance": 0.3,
+        "desc": "Thần quy về Hư, hòa thiên địa, cảm nhận pháp tắc. Từ đây mỗi tiểu cảnh giới cách nhau VÔ HẠN.",
+        "locked": false,
+        "roleId": ""
+      },
+      {
+        "id": "luyen_hu_hop_dao",
+        "name": "Luyện Hư Hợp Đạo",
+        "emoji": "☯️",
+        "cap": 1,
+        "color": "#c084fc",
+        "layer": 2,
+        "b0": 0,
+        "bStep": 60,
+        "growth": 1.5,
+        "tierNames": [
+          "Sơ kỳ",
+          "Trung kỳ",
+          "Hậu kỳ",
+          "Đại viên mãn"
+        ],
+        "expB0": 0,
+        "expStep": 40,
+        "trains": 18,
+        "chance": 0.25,
+        "desc": "Chưởng khống, sáng tạo, hủy diệt toàn bộ tiểu thiên. Toàn năng trong giới nhưng chưa toàn tri.",
+        "locked": false,
+        "roleId": ""
+      },
+      {
+        "id": "truc_co",
+        "name": "Trúc Cơ",
+        "emoji": "🏯",
+        "cap": 2,
+        "color": "#f472b6",
+        "layer": 3,
+        "b0": 0,
+        "bStep": 90,
+        "growth": 1.5,
+        "tierNames": [
+          "Sơ kỳ",
+          "Trung kỳ",
+          "Hậu kỳ",
+          "Đại viên mãn"
+        ],
+        "expB0": 0,
+        "expStep": 60,
+        "trains": 20,
+        "chance": 0.2,
+        "desc": "Tự thân là tiểu thiên, kẻ chưởng khống trung thiên.",
+        "locked": false,
+        "roleId": ""
+      },
+      {
+        "id": "kim_dan",
+        "name": "Kim Đan",
+        "emoji": "🟡",
+        "cap": 2,
+        "color": "#fbbf24",
+        "layer": 4,
+        "b0": 0,
+        "bStep": 120,
+        "growth": 1.5,
+        "tierNames": [
+          "Sơ kỳ",
+          "Trung kỳ",
+          "Hậu kỳ",
+          "Đại viên mãn"
+        ],
+        "expB0": 0,
+        "expStep": 80,
+        "trains": 20,
+        "chance": 0.2,
+        "desc": "Ép trung thiên vô hạn thành kim đan, thai nghén thần mới. Diệt thế trung thiên.",
+        "locked": false,
+        "roleId": ""
+      },
+      {
+        "id": "nguyen_anh",
+        "name": "Nguyên Anh",
+        "emoji": "👶",
+        "cap": 2,
+        "color": "#fb923c",
+        "layer": 5,
+        "b0": 0,
+        "bStep": 160,
+        "growth": 1.5,
+        "tierNames": [
+          "Sơ kỳ",
+          "Trung kỳ",
+          "Hậu kỳ",
+          "Đại viên mãn"
+        ],
+        "expB0": 0,
+        "expStep": 100,
+        "trains": 22,
+        "chance": 0.18,
+        "desc": "Vô hạn kim đan nở rộ, sinh hài nhi thần.",
+        "locked": false,
+        "roleId": ""
+      },
+      {
+        "id": "hoa_than",
+        "name": "Hóa Thần",
+        "emoji": "🔱",
+        "cap": 2,
+        "color": "#f87171",
+        "layer": 6,
+        "b0": 0,
+        "bStep": 200,
+        "growth": 1.5,
+        "tierNames": [
+          "Sơ kỳ",
+          "Trung kỳ",
+          "Hậu kỳ",
+          "Đại viên mãn"
+        ],
+        "expB0": 0,
+        "expStep": 130,
+        "trains": 22,
+        "chance": 0.16,
+        "desc": "Thần trong cơ thể lớn lên, bắt đầu tiếp xúc đại thiên.",
+        "locked": false,
+        "roleId": ""
+      },
+      {
+        "id": "phan_hu",
+        "name": "Phản Hư",
+        "emoji": "🌀",
+        "cap": 2,
+        "color": "#34d399",
+        "layer": 7,
+        "b0": 0,
+        "bStep": 260,
+        "growth": 1.5,
+        "tierNames": [
+          "Sơ kỳ",
+          "Trung kỳ",
+          "Hậu kỳ",
+          "Đại viên mãn"
+        ],
+        "expB0": 0,
+        "expStep": 170,
+        "trains": 24,
+        "chance": 0.14,
+        "desc": "Thần hòa nhập vào vô hạn đại thiên giới trong đa nguyên.",
+        "locked": false,
+        "roleId": ""
+      },
+      {
+        "id": "do_kiep",
+        "name": "Độ Kiếp",
+        "emoji": "⚡",
+        "cap": 2,
+        "color": "#2dd4bf",
+        "layer": 8,
+        "b0": 0,
+        "bStep": 340,
+        "growth": 1.5,
+        "tierNames": [
+          "Sơ kỳ",
+          "Trung kỳ",
+          "Hậu kỳ",
+          "Đại viên mãn"
+        ],
+        "expB0": 0,
+        "expStep": 220,
+        "trains": 24,
+        "chance": 0.12,
+        "desc": "Vươn tới vô hạn đa nguyên, chưởng khống đa nguyên chư thiên.",
+        "locked": false,
+        "roleId": ""
+      },
+      {
+        "id": "dai_thua",
+        "name": "Đại Thừa",
+        "emoji": "🕊️",
+        "cap": 2,
+        "color": "#e5e7eb",
+        "layer": 9,
+        "b0": 0,
+        "bStep": 450,
+        "growth": 1.5,
+        "tierNames": [
+          "Sơ kỳ",
+          "Trung kỳ",
+          "Hậu kỳ",
+          "Đại viên mãn"
+        ],
+        "expB0": 0,
+        "expStep": 300,
+        "trains": 26,
+        "chance": 0,
+        "desc": "Chí cao đa nguyên chư thiên, tìm cách siêu thoát thành chân tiên. Tỷ lệ lên cấp 3 luôn là 0… nhưng sẽ luôn là 100 trong 0.",
+        "locked": false,
+        "roleId": ""
+      },
+      {
+        "id": "chan_tien",
+        "name": "Chân Tiên",
+        "emoji": "🪽",
+        "cap": 3,
+        "color": "#ffffff",
+        "layer": 1000,
+        "b0": 0,
+        "bStep": 0,
+        "growth": 1,
+        "tierNames": [
+          "Thái Sơ"
+        ],
+        "expB0": 0,
+        "expStep": 0,
+        "trains": 1,
+        "chance": 0,
+        "desc": "Cấp 3 — thoát khỏi hỗn độn, về Thái Sơ. Không thể diễn tả, không thể tưởng. Khái niệm không thể vượt trên khái niệm.",
+        "locked": true,
+        "roleId": ""
+      },
+      {
+        "id": "huyen_tien",
+        "name": "Huyền Tiên",
+        "emoji": "🌠",
+        "cap": 3,
+        "color": "#ffffff",
+        "layer": 2000,
+        "b0": 0,
+        "bStep": 0,
+        "growth": 1,
+        "tierNames": [
+          "Thái Sơ"
+        ],
+        "expB0": 0,
+        "expStep": 0,
+        "trains": 1,
+        "chance": 0,
+        "desc": "Cấp 3 — thoát khỏi hỗn độn, về Thái Sơ. Không thể diễn tả, không thể tưởng. Khái niệm không thể vượt trên khái niệm.",
+        "locked": true,
+        "roleId": ""
+      },
+      {
+        "id": "dia_tien",
+        "name": "Địa Tiên",
+        "emoji": "🏔️",
+        "cap": 3,
+        "color": "#ffffff",
+        "layer": 3000,
+        "b0": 0,
+        "bStep": 0,
+        "growth": 1,
+        "tierNames": [
+          "Thái Sơ"
+        ],
+        "expB0": 0,
+        "expStep": 0,
+        "trains": 1,
+        "chance": 0,
+        "desc": "Cấp 3 — thoát khỏi hỗn độn, về Thái Sơ. Không thể diễn tả, không thể tưởng. Khái niệm không thể vượt trên khái niệm.",
+        "locked": true,
+        "roleId": ""
+      },
+      {
+        "id": "kim_tien",
+        "name": "Kim Tiên",
+        "emoji": "🪙",
+        "cap": 3,
+        "color": "#ffffff",
+        "layer": 4000,
+        "b0": 0,
+        "bStep": 0,
+        "growth": 1,
+        "tierNames": [
+          "Thái Sơ"
+        ],
+        "expB0": 0,
+        "expStep": 0,
+        "trains": 1,
+        "chance": 0,
+        "desc": "Cấp 3 — thoát khỏi hỗn độn, về Thái Sơ. Không thể diễn tả, không thể tưởng. Khái niệm không thể vượt trên khái niệm.",
+        "locked": true,
+        "roleId": ""
+      },
+      {
+        "id": "thai_at_kim_tien",
+        "name": "Thái Ất Kim Tiên",
+        "emoji": "🌟",
+        "cap": 3,
+        "color": "#ffffff",
+        "layer": 5000,
+        "b0": 0,
+        "bStep": 0,
+        "growth": 1,
+        "tierNames": [
+          "Thái Sơ"
+        ],
+        "expB0": 0,
+        "expStep": 0,
+        "trains": 1,
+        "chance": 0,
+        "desc": "Cấp 3 — thoát khỏi hỗn độn, về Thái Sơ. Không thể diễn tả, không thể tưởng. Khái niệm không thể vượt trên khái niệm.",
+        "locked": true,
+        "roleId": ""
+      },
+      {
+        "id": "dai_la",
+        "name": "Đại La",
+        "emoji": "♾️",
+        "cap": 3,
+        "color": "#ffffff",
+        "layer": 6000,
+        "b0": 0,
+        "bStep": 0,
+        "growth": 1,
+        "tierNames": [
+          "Thái Sơ"
+        ],
+        "expB0": 0,
+        "expStep": 0,
+        "trains": 1,
+        "chance": 0,
+        "desc": "Cấp 3 — thoát khỏi hỗn độn, về Thái Sơ. Không thể diễn tả, không thể tưởng. Khái niệm không thể vượt trên khái niệm.",
+        "locked": true,
+        "roleId": ""
+      }
+    ],
+    "stats": [
+      {
+        "id": "hp",
+        "name": "Sinh Mệnh",
+        "emoji": "❤️",
+        "off": 1,
+        "desc": "Máu"
+      },
+      {
+        "id": "atk",
+        "name": "Công Kích",
+        "emoji": "⚔️",
+        "off": 0,
+        "desc": "Sức tấn công"
+      },
+      {
+        "id": "def",
+        "name": "Phòng Ngự",
+        "emoji": "🛡️",
+        "off": -0.2,
+        "desc": "Giảm sát thương nhận"
+      },
+      {
+        "id": "spd",
+        "name": "Tốc Độ",
+        "emoji": "💨",
+        "off": -0.5,
+        "desc": "Ai ra đòn trước"
+      },
+      {
+        "id": "mp",
+        "name": "Linh Lực",
+        "emoji": "🔷",
+        "off": 0.7,
+        "desc": "Tiêu hao khi dùng khả năng"
+      },
+      {
+        "id": "soul",
+        "name": "Thần Thức",
+        "emoji": "👁️",
+        "off": 0.2,
+        "desc": "Cảm nhận pháp tắc"
+      }
+    ],
+    "abilities": [
+      {
+        "id": "quyen_phap",
+        "name": "Phàm Quyền",
+        "emoji": "👊",
+        "minRealm": 0,
+        "type": "damage",
+        "mult": 0.3,
+        "cost": 0,
+        "cd": 0,
+        "extra": 0,
+        "turns": 0,
+        "layerBoost": 0,
+        "desc": "Đòn cơ bản, không tốn linh lực."
+      },
+      {
+        "id": "cuong_phong_chuong",
+        "name": "Cuồng Phong Chưởng",
+        "emoji": "🌪️",
+        "minRealm": 1,
+        "type": "damage",
+        "mult": 0.7,
+        "cost": 0.05,
+        "cd": 1,
+        "extra": 0,
+        "turns": 0,
+        "layerBoost": 0,
+        "desc": "Chưởng phong của võ giả."
+      },
+      {
+        "id": "tinh_khi_hop_nhat",
+        "name": "Tinh Khí Hợp Nhất",
+        "emoji": "🔥",
+        "minRealm": 2,
+        "type": "damage",
+        "mult": 1.2,
+        "cost": 0.1,
+        "cd": 1,
+        "extra": 0,
+        "turns": 0,
+        "layerBoost": 0,
+        "desc": "Dồn tinh và hậu thiên khí vào một đòn."
+      },
+      {
+        "id": "hau_thien_ho_the",
+        "name": "Hậu Thiên Hộ Thể",
+        "emoji": "🛡️",
+        "minRealm": 2,
+        "type": "shield",
+        "mult": 0,
+        "cost": 0.08,
+        "cd": 3,
+        "extra": 1.5,
+        "turns": 0,
+        "layerBoost": 0,
+        "desc": "Khí hóa giáp hấp thụ sát thương."
+      },
+      {
+        "id": "tam_hoa_tu_dinh",
+        "name": "Tam Hoa Tụ Đỉnh",
+        "emoji": "🌸",
+        "minRealm": 3,
+        "type": "buff",
+        "mult": 0,
+        "cost": 0.1,
+        "cd": 4,
+        "extra": 2,
+        "turns": 3,
+        "layerBoost": 0,
+        "desc": "Công kích tăng mạnh trong 3 lượt."
+      },
+      {
+        "id": "than_chi_hoa",
+        "name": "Thần Chi Hóa",
+        "emoji": "💠",
+        "minRealm": 3,
+        "type": "revive",
+        "mult": 0,
+        "cost": 0,
+        "cd": 0,
+        "extra": 0.5,
+        "turns": 0,
+        "layerBoost": 0,
+        "desc": "Bị động: nhục thân hủy diệt vẫn tái tạo, hồi 50% sinh mệnh (1 lần/trận)."
+      },
+      {
+        "id": "diet_the_nhat_kich",
+        "name": "Diệt Thế Nhất Kích",
+        "emoji": "💥",
+        "minRealm": 3,
+        "type": "damage",
+        "mult": 4,
+        "cost": 0.2,
+        "cd": 2,
+        "extra": 0,
+        "turns": 0,
+        "layerBoost": 0,
+        "desc": "Đòn của kẻ diệt thế."
+      },
+      {
+        "id": "quy_hu",
+        "name": "Quy Hư",
+        "emoji": "🌫️",
+        "minRealm": 4,
+        "type": "dodge",
+        "mult": 0,
+        "cost": 0,
+        "cd": 0,
+        "extra": 0.25,
+        "turns": 0,
+        "layerBoost": 0,
+        "desc": "Bị động: 25% quy về hư, đòn đánh xuyên qua như không."
+      },
+      {
+        "id": "phap_tac_tran_lai",
+        "name": "Pháp Tắc Trải Dài",
+        "emoji": "📜",
+        "minRealm": 4,
+        "type": "pierce",
+        "mult": 2.5,
+        "cost": 0.15,
+        "cd": 2,
+        "extra": 0,
+        "turns": 0,
+        "layerBoost": 0,
+        "desc": "Pháp tắc xuyên giáp, bỏ qua phòng ngự."
+      },
+      {
+        "id": "tieu_thien_chuong_khong",
+        "name": "Tiểu Thiên Chưởng Khống",
+        "emoji": "🌐",
+        "minRealm": 5,
+        "type": "drain",
+        "mult": 6,
+        "cost": 0.25,
+        "cd": 3,
+        "extra": 0.3,
+        "turns": 0,
+        "layerBoost": 0,
+        "desc": "Chưởng khống quy tắc, hút 30% sát thương thành sinh mệnh."
+      },
+      {
+        "id": "truc_co_chan_the",
+        "name": "Trúc Cơ Chân Thể",
+        "emoji": "🏯",
+        "minRealm": 6,
+        "type": "shield",
+        "mult": 0,
+        "cost": 0.2,
+        "cd": 4,
+        "extra": 6,
+        "turns": 0,
+        "layerBoost": 0,
+        "desc": "Thân là tiểu thiên, khiên vô cùng dày."
+      },
+      {
+        "id": "kim_dan_thon_the",
+        "name": "Kim Đan Nuốt Thế",
+        "emoji": "🟡",
+        "minRealm": 7,
+        "type": "drain",
+        "mult": 9,
+        "cost": 0.3,
+        "cd": 3,
+        "extra": 0.4,
+        "turns": 0,
+        "layerBoost": 0,
+        "desc": "Kim đan nuốt trung thiên, hút 40% sát thương."
+      },
+      {
+        "id": "nguyen_anh_hoa_than",
+        "name": "Nguyên Anh Hóa Thân",
+        "emoji": "👶",
+        "minRealm": 8,
+        "type": "buff",
+        "mult": 0,
+        "cost": 0.2,
+        "cd": 5,
+        "extra": 12,
+        "turns": 4,
+        "layerBoost": 0,
+        "desc": "Hài nhi thần xuất thế, công kích tăng 4 lượt."
+      },
+      {
+        "id": "phan_hu_quy_nhat",
+        "name": "Phản Hư Quy Nhất",
+        "emoji": "🌀",
+        "minRealm": 10,
+        "type": "pierce",
+        "mult": 12,
+        "cost": 0.3,
+        "cd": 3,
+        "extra": 0,
+        "turns": 0,
+        "layerBoost": 1,
+        "desc": "Quy nhất đại thiên: xuyên giáp và nhảy lên 1 tầng vô hạn."
+      },
+      {
+        "id": "do_kiep_loi_hai",
+        "name": "Độ Kiếp Lôi Hải",
+        "emoji": "⚡",
+        "minRealm": 11,
+        "type": "damage",
+        "mult": 18,
+        "cost": 0.35,
+        "cd": 3,
+        "extra": 0,
+        "turns": 0,
+        "layerBoost": 1,
+        "desc": "Lôi kiếp của đa nguyên giáng xuống, nhảy 1 tầng vô hạn."
+      },
+      {
+        "id": "dai_thua_sieu_thoat",
+        "name": "Đại Thừa Siêu Thoát",
+        "emoji": "🕊️",
+        "minRealm": 12,
+        "type": "heal",
+        "mult": 0,
+        "cost": 0.3,
+        "cd": 5,
+        "extra": 1,
+        "turns": 0,
+        "layerBoost": 0,
+        "desc": "Siêu thoát vòng sinh tử: hồi đầy sinh mệnh."
+      }
+    ],
+    "menus": [
+      {
+        "id": "main",
+        "name": "Menu chính",
+        "ownerOnly": true,
+        "content": "",
+        "rows": [
+          [
+            {
+              "label": "Trạng thái",
+              "emoji": "📜",
+              "style": "primary",
+              "action": {
+                "type": "cmd",
+                "value": "status"
+              }
+            },
+            {
+              "label": "Tu luyện",
+              "emoji": "🧘",
+              "style": "success",
+              "action": {
+                "type": "cmd",
+                "value": "train"
+              }
+            },
+            {
+              "label": "Đột phá",
+              "emoji": "⚡",
+              "style": "danger",
+              "action": {
+                "type": "cmd",
+                "value": "breakthrough"
+              }
+            }
+          ],
+          [
+            {
+              "label": "Khả năng",
+              "emoji": "🌀",
+              "style": "secondary",
+              "action": {
+                "type": "cmd",
+                "value": "abilities"
+              }
+            },
+            {
+              "label": "Tâm ma",
+              "emoji": "👹",
+              "style": "secondary",
+              "action": {
+                "type": "cmd",
+                "value": "duel"
+              }
+            },
+            {
+              "label": "Bảng xếp hạng",
+              "emoji": "🏆",
+              "style": "secondary",
+              "action": {
+                "type": "cmd",
+                "value": "top"
+              }
+            }
+          ]
+        ],
+        "embed": {
+          "enabled": true,
+          "color": "#8b5cf6",
+          "title": "☯️ Tu Tiên — Menu của {name}",
+          "description": "Cảnh giới hiện tại: {realmEmoji} **{realm}** · {tierName}\nTu vi: `{bar}`\n\n*Đại La ngự trị tại Thái Sơ… còn ngươi, đang ở đâu giữa hỗn độn?*",
+          "url": "",
+          "thumbnail": "",
+          "image": "",
+          "author": {
+            "name": "",
+            "icon": ""
+          },
+          "footer": {
+            "text": "Cấp {cap} · {tangVoHan}",
+            "icon": ""
+          },
+          "timestamp": false,
+          "fields": [
+            {
+              "name": "❤️ Sinh Mệnh",
+              "value": "{hp}",
+              "inline": true
+            },
+            {
+              "name": "⚔️ Công Kích",
+              "value": "{atk}",
+              "inline": true
+            },
+            {
+              "name": "🛡️ Phòng Ngự",
+              "value": "{def}",
+              "inline": true
+            }
+          ]
+        }
+      },
+      {
+        "id": "status",
+        "name": "Trạng thái",
+        "ownerOnly": true,
+        "content": "",
+        "rows": [
+          [
+            {
+              "label": "Tu luyện",
+              "emoji": "🧘",
+              "style": "success",
+              "action": {
+                "type": "cmd",
+                "value": "train"
+              }
+            },
+            {
+              "label": "Đột phá",
+              "emoji": "⚡",
+              "style": "danger",
+              "action": {
+                "type": "cmd",
+                "value": "breakthrough"
+              }
+            },
+            {
+              "label": "Menu",
+              "emoji": "🏠",
+              "style": "secondary",
+              "action": {
+                "type": "menu",
+                "value": "main"
+              }
+            }
+          ]
+        ],
+        "embed": {
+          "enabled": true,
+          "color": "#60a5fa",
+          "title": "{realmEmoji} {name} — {realm}",
+          "description": "**{tierName}** · cấp {cap}\nTu vi `{bar}` ({expPct}%)\n{exp} / {need}\n\n{statLines}",
+          "url": "",
+          "thumbnail": "",
+          "image": "",
+          "author": {
+            "name": "",
+            "icon": ""
+          },
+          "footer": {
+            "text": "{tangVoHan}",
+            "icon": ""
+          },
+          "timestamp": false,
+          "fields": [
+            {
+              "name": "🏆 Chiến tích",
+              "value": "Thắng {wins} · Thua {losses}",
+              "inline": true
+            },
+            {
+              "name": "☯️ Đạo ngấn",
+              "value": "{dao}",
+              "inline": true
+            }
+          ]
+        }
+      },
+      {
+        "id": "result",
+        "name": "Kết quả lệnh",
+        "ownerOnly": true,
+        "content": "",
+        "rows": [
+          [
+            {
+              "label": "Tu luyện",
+              "emoji": "🧘",
+              "style": "success",
+              "action": {
+                "type": "cmd",
+                "value": "train"
+              }
+            },
+            {
+              "label": "Trạng thái",
+              "emoji": "📜",
+              "style": "primary",
+              "action": {
+                "type": "cmd",
+                "value": "status"
+              }
+            },
+            {
+              "label": "Menu",
+              "emoji": "🏠",
+              "style": "secondary",
+              "action": {
+                "type": "menu",
+                "value": "main"
+              }
+            }
+          ]
+        ],
+        "embed": {
+          "enabled": true,
+          "color": "#34d399",
+          "title": "{title}",
+          "description": "{result}",
+          "url": "",
+          "thumbnail": "",
+          "image": "",
+          "author": {
+            "name": "",
+            "icon": ""
+          },
+          "footer": {
+            "text": "{realm} · {tierName} · `{bar}`",
+            "icon": ""
+          },
+          "timestamp": false,
+          "fields": []
+        }
+      },
+      {
+        "id": "abilities",
+        "name": "Khả năng",
+        "ownerOnly": true,
+        "content": "",
+        "rows": [
+          [
+            {
+              "label": "Trạng thái",
+              "emoji": "📜",
+              "style": "primary",
+              "action": {
+                "type": "cmd",
+                "value": "status"
+              }
+            },
+            {
+              "label": "Menu",
+              "emoji": "🏠",
+              "style": "secondary",
+              "action": {
+                "type": "menu",
+                "value": "main"
+              }
+            }
+          ]
+        ],
+        "embed": {
+          "enabled": true,
+          "color": "#f472b6",
+          "title": "🌀 Khả năng của {name}",
+          "description": "{result}",
+          "url": "",
+          "thumbnail": "",
+          "image": "",
+          "author": {
+            "name": "",
+            "icon": ""
+          },
+          "footer": {
+            "text": "Dùng !ttkn dùng <id> để chọn khả năng, !ttkn bỏ để dùng tất cả",
+            "icon": ""
+          },
+          "timestamp": false,
+          "fields": []
+        }
+      }
+    ],
+    "commands": [
+      {
+        "id": "menu",
+        "name": "Menu Tu Tiên",
+        "trigger": "!tt",
+        "matchType": "exact",
+        "type": "menu",
+        "access": {
+          "mode": "all",
+          "roleIds": [],
+          "denyRoleIds": [],
+          "minRealm": 0
+        },
+        "menu": "main",
+        "cooldown": 3,
+        "enabled": true,
+        "replyMode": "reply",
+        "reply": "",
+        "language": "javascript",
+        "code": "",
+        "timeoutMs": 5000
+      },
+      {
+        "id": "status",
+        "name": "Xem trạng thái",
+        "trigger": "!ttc",
+        "matchType": "startsWith",
+        "type": "status",
+        "access": {
+          "mode": "all",
+          "roleIds": [],
+          "denyRoleIds": [],
+          "minRealm": 0
+        },
+        "menu": "status",
+        "cooldown": 3,
+        "enabled": true,
+        "replyMode": "reply",
+        "reply": "",
+        "language": "javascript",
+        "code": "",
+        "timeoutMs": 5000
+      },
+      {
+        "id": "train",
+        "name": "Tu luyện",
+        "trigger": "!ttl",
+        "matchType": "exact",
+        "type": "train",
+        "access": {
+          "mode": "all",
+          "roleIds": [],
+          "denyRoleIds": [],
+          "minRealm": 0
+        },
+        "menu": "result",
+        "cooldown": 10,
+        "enabled": true,
+        "replyMode": "reply",
+        "reply": "",
+        "language": "javascript",
+        "code": "",
+        "timeoutMs": 5000
+      },
+      {
+        "id": "breakthrough",
+        "name": "Đột phá",
+        "trigger": "!ttdp",
+        "matchType": "exact",
+        "type": "breakthrough",
+        "access": {
+          "mode": "all",
+          "roleIds": [],
+          "denyRoleIds": [],
+          "minRealm": 0
+        },
+        "menu": "result",
+        "cooldown": 10,
+        "enabled": true,
+        "replyMode": "reply",
+        "reply": "",
+        "language": "javascript",
+        "code": "",
+        "timeoutMs": 5000
+      },
+      {
+        "id": "abilities",
+        "name": "Khả năng",
+        "trigger": "!ttkn",
+        "matchType": "startsWith",
+        "type": "abilities",
+        "access": {
+          "mode": "all",
+          "roleIds": [],
+          "denyRoleIds": [],
+          "minRealm": 0
+        },
+        "menu": "abilities",
+        "cooldown": 3,
+        "enabled": true,
+        "replyMode": "reply",
+        "reply": "",
+        "language": "javascript",
+        "code": "",
+        "timeoutMs": 5000
+      },
+      {
+        "id": "duel",
+        "name": "Luận bàn (@người hoặc tâm ma)",
+        "trigger": "!ttpk",
+        "matchType": "startsWith",
+        "type": "duel",
+        "access": {
+          "mode": "all",
+          "roleIds": [],
+          "denyRoleIds": [],
+          "minRealm": 0
+        },
+        "menu": "result",
+        "cooldown": 20,
+        "enabled": true,
+        "replyMode": "reply",
+        "reply": "",
+        "language": "javascript",
+        "code": "",
+        "timeoutMs": 5000
+      },
+      {
+        "id": "top",
+        "name": "Bảng xếp hạng",
+        "trigger": "!tttop",
+        "matchType": "exact",
+        "type": "top",
+        "access": {
+          "mode": "all",
+          "roleIds": [],
+          "denyRoleIds": [],
+          "minRealm": 0
+        },
+        "menu": "result",
+        "cooldown": 5,
+        "enabled": true,
+        "replyMode": "reply",
+        "reply": "",
+        "language": "javascript",
+        "code": "",
+        "timeoutMs": 5000
+      },
+      {
+        "id": "treo",
+        "name": "Treo tu luyện (role cấp cao)",
+        "trigger": "!ttreo",
+        "matchType": "startsWith",
+        "type": "script",
+        "access": {
+          "mode": "all",
+          "roleIds": [],
+          "denyRoleIds": [],
+          "minRealm": 0
+        },
+        "menu": "result",
+        "cooldown": 5,
+        "enabled": true,
+        "replyMode": "reply",
+        "reply": "",
+        "language": "javascript",
+        "code": "// TREO TU LUYỆN — role cấp cao (gán ở trang Tu Tiên › Role & liên kết; role “tự động” khỏi cần gõ lệnh). Gõ: !ttreo (bật / thu hoạch) · !ttreo tat (thu hoạch rồi dừng) · !ttreo xem\n// Không cần bấm \"Tu luyện\": tu vi tích theo thời gian thực, gõ lệnh là nhận phần đã tích (tự lên tầng).\nconst ROLE_IDS = [];          // ID role cấp cao được treo, vd ['123456789012345678']. Admin / chủ server luôn được.\nconst ROLE_NAMES = [];        // hoặc theo tên role, vd ['VIP', 'Trưởng lão']\nconst INTERVAL_SEC = 60;      // cứ N giây treo = 1 lần tu luyện\nconst EFFICIENCY = 1;         // hiệu suất so với bấm tay (1 = bằng, 2 = gấp đôi ...)\nconst MAX_HOURS = 8;          // mỗi lần thu hoạch tối đa N giờ (quá giờ thì phần dư mất)\nconst MIN_REALM = 0;          // chỉ cho treo từ cảnh giới số mấy (0 = Phàm Nhân, 3 = Luyện Khí Hóa Thần)\n\nconst u = ctx.user, p = shared.player;\nconst allowed = u.isAdmin || u.isOwner || (ctx.idle && ctx.idle.mode !== 'none') || ROLE_IDS.some(id => u.roleIds.includes(String(id))) || ROLE_NAMES.some(n => u.roles.includes(n));\nif (!allowed) { reply('🔒 ' + u.mention + ' chỉ role cấp cao mới được **treo tu luyện**.'); return; }\nif (ctx.player.realmIdx < MIN_REALM) { reply('🚫 Cần đạt cảnh giới số **' + MIN_REALM + '** trở lên mới được treo.'); return; }\n\np.flags = p.flags || {};\nconst EFF = EFFICIENCY * ((ctx.idle && ctx.idle.mult) || 1);   // hệ số theo role (tab Role & liên kết)\nif (ctx.idle && ctx.idle.mode === 'auto') { const f = p.flags.auto; reply('♾️ ' + u.mention + ' thuộc role **tự động treo**: không cần gõ lệnh, tu vi tự tích theo thời gian (đã tích ≈ **' + Math.floor((f && f.total) || 0) + '** lần tu luyện).'); return; }\nconst now = ctx.now, arg = (ctx.args[0] || '').toLowerCase();\nconst dur = s => { s = Math.floor(s); const h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60); return (h ? h + ' giờ ' : '') + m + ' phút'; };\nconst OFF = ['tat', 'tắt', 'off', 'dung', 'dừng', 'stop'], VIEW = ['xem', 'status', 'tt'];\nlet idle = p.flags.idle;\n\nfunction settle() {                         // đổi thời gian đã treo thành số lần tu luyện\n  const capMs = MAX_HOURS * 3600 * 1000, el = Math.max(0, now - idle.last), used = Math.min(el, capMs);\n  const trains = Math.min(5000, used / 1000 / INTERVAL_SEC * EFF);\n  idle.last = now; idle.total = (idle.total || 0) + trains;\n  p.addTrains = trains;\n  return { used, lost: el - used, trains };\n}\n\nif (VIEW.includes(arg)) {\n  if (!idle || !idle.on) reply('💤 Đang **không treo**. Gõ \\`!ttreo\\` để bắt đầu.');\n  else { const el = Math.min(now - idle.last, MAX_HOURS * 3600000); reply('🧘 Đang treo **' + dur((now - idle.since) / 1000) + '** · chờ thu hoạch ≈ **' + Math.floor(el / 1000 / INTERVAL_SEC * EFF) + '** lần tu luyện (tối đa ' + MAX_HOURS + ' giờ).'); }\n} else if (OFF.includes(arg)) {\n  if (!idle || !idle.on) reply('💤 Ngươi đang không treo.');\n  else { const r = settle(); idle.on = false; reply('🛑 Dừng treo sau **' + dur((now - idle.since) / 1000) + '**. Thu hoạch ≈ **' + Math.floor(r.trains) + '** lần tu luyện.'); }\n} else if (!idle || !idle.on) {\n  p.flags.idle = { on: true, since: now, last: now, total: (idle && idle.total) || 0 };\n  reply('🧘 ' + u.mention + ' bắt đầu **treo tu luyện** (1 lần / ' + INTERVAL_SEC + 's, tối đa ' + MAX_HOURS + ' giờ mỗi lượt thu). Gõ \\`!ttreo\\` lại để thu hoạch, \\`!ttreo tat\\` để dừng.');\n} else {\n  const r = settle();\n  reply('🧘 Thu hoạch sau **' + dur(r.used / 1000) + '** treo: ≈ **' + Math.floor(r.trains) + '** lần tu luyện.' + (r.lost > 0 ? '\\n⚠️ Quá ' + MAX_HOURS + ' giờ nên mất ' + dur(r.lost / 1000) + '.' : '') + '\\nVẫn đang treo — gõ \\`!ttreo tat\\` để dừng.');\n}",
+        "timeoutMs": 5000
+      },
+      {
+        "id": "ngodao",
+        "name": "Ngộ đạo (ví dụ script)",
+        "trigger": "!ttdao",
+        "matchType": "exact",
+        "type": "script",
+        "access": {
+          "mode": "all",
+          "roleIds": [],
+          "denyRoleIds": [],
+          "minRealm": 0
+        },
+        "menu": "",
+        "cooldown": 30,
+        "enabled": false,
+        "replyMode": "reply",
+        "reply": "",
+        "language": "javascript",
+        "code": "// Lệnh script Tu Tiên. ctx.player = dữ liệu người chơi (đã định dạng), shared.player = bản thô để sửa.\n// Thư viện số vô hạn: const I = require(ctx.libPath);  I.fmt([tầng, log10])\nconst I = require(ctx.libPath);\nconst p = shared.player;               // { realm, tier, exp:[a,b], dao, flags, ... }\np.dao = (p.dao || 0) + 1;              // ngộ đạo: +1 đạo ngấn\nreply('☯️ ' + ctx.user.mention + ' ngộ đạo, đạo ngấn: **' + p.dao + '** (cảnh giới ' + ctx.player.realm + ')');",
+        "timeoutMs": 5000
+      }
+    ],
+    "auto": {
+      "enabled": true,
+      "intervalSec": 60,
+      "efficiency": 1,
+      "maxHours": 8,
+      "tickSec": 60,
+      "minRealm": 0,
+      "notifyChannelId": "",
+      "notifyTierUp": true
+    },
+    "ai": {
+      "enabled": true,
+      "source": "script",
+      "url": "http://127.0.0.1:11434/api/chat",
+      "model": "qwen2.5:7b",
+      "timeoutMs": 15000,
+      "maxChars": 800,
+      "prompt": "Bạn là thuyết thư nhân kể chuyện tiên hiệp. Nhận dữ liệu một trận luận bàn dạng JSON. KẾT QUẢ ĐÃ ĐƯỢC BOT CHỐT: tuyệt đối không đổi người thắng/thua, không bịa thêm kết quả hay con số. Viết 3-5 câu tiếng Việt, văn phong cổ trang tiên hiệp, giàu hình ảnh, nhắc tên các cảnh giới. Nếu kiểu=\"uy_ap\": kẻ cảnh giới cao KHÔNG ra tay, chỉ trừng mắt/uy áp là đối phương chết chắc — mô tả sự áp đảo tuyệt đối, không có giao chiến. Không dùng markdown, không liệt kê, chỉ in ra đoạn văn."
+    },
+    "roleLinks": []
+  }
+}
